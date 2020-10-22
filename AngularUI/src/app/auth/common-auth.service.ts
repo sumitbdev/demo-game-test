@@ -13,7 +13,7 @@ export class CommonAuthService {
 
   registerUser(form: any){
     console.log(form.value);
-    return this.http.post('http://127.0.0.1:8000/api/register', form.value);
+    return this.http.post('http://ec2-54-196-125-155.compute-1.amazonaws.com/api/register', form.value);
   }
 
    isAuthonticated(){
@@ -35,12 +35,12 @@ export class CommonAuthService {
   }
 
   logIn(form: any): Observable<any>{
-    return this.http.post('http://127.0.0.1:8000/api/login', form.value);
+    return this.http.post('http://ec2-54-196-125-155.compute-1.amazonaws.com/api/login', form.value);
     //return result;
   }
 
   logout(token: any): Observable<any>{
-    return this.http.post('http://127.0.0.1:8000/api/logout', {'token': token});
+    return this.http.post('http://ec2-54-196-125-155.compute-1.amazonaws.com/api/logout', {'token': token});
     //return result;
   }
 }
